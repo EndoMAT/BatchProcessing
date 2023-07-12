@@ -161,7 +161,6 @@ void Job::run()
 
     jobStarted(this->id);
     if(deskew) {
-        qDebug() << "Deskew started";
         jobUpdate(this->id, "Deskew", "Started", 0);
 
         QDir opPath(outputDir);
@@ -200,7 +199,6 @@ void Job::run()
         }
 
         jobUpdate(this->id, "Deskew", "Finished", 1);
-        qDebug() << "Deskew Finished";
     }
     if(decon) {
         jobUpdate(this->id, "Decon", "Started", 0);
@@ -211,7 +209,7 @@ void Job::run()
         jobUpdate(this->id, "Bleach Correct", "Finished", 1);
     }
     if(hyperStack) {
-        qDebug() << "Hyperstack Startted";
+        // Work in progress
         jobUpdate(this->id, "Hyper Stack", "Started", 0);
         QDir opPath(outputDir);
         QString opdir = opPath.filePath("HyperStack");
@@ -248,7 +246,6 @@ void Job::run()
         dh.save();
 
         jobUpdate(this->id, "Hyper Stack", "Finished", 1);
-        qDebug() << "Hyperstack Finished";
     }
     if(hyperStackCreator) {
         qDebug() << "Doing Hyper Stack Creator";

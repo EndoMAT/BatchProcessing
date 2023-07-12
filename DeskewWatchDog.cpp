@@ -87,12 +87,6 @@ int main(int argc, char** argv) {
         DeskewThread::instance()->add(path);
     });
 
-
-//    signal(SIGINT, [&](int s){
-//        qDebug() << "About to quit";
-//        DeskewThread::instance()->quit();
-//       app.quit();
-//    });
     signal(SIGINT, handle_ctrl_c);
 
 

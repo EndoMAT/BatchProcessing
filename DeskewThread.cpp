@@ -53,15 +53,10 @@ void DeskewThread::run()
     while(jobs.size()){
         currentFile = jobs.takeFirst();
         currentFile = QFileInfo(currentFile).fileName();
-        qDebug() << "Processing " << currentFile << " OP: " << outputDir;
-//        qDebug() << "Delay " << delay;
-//        QThread::sleep(delay);
         QString inputPath = QDir(inputDir).absoluteFilePath(currentFile);
         QString outputPath = QDir(outputDir).absoluteFilePath(currentFile);
-        qDebug() << "Processing " << inputPath << " OPD: "<< outputDir << "  OP:  " << outputPath;
         DeskewRunner deskew(inputPath,
                             outputPath, 0.4, 0.104, 31.8, true);
-        qDebug() << "Done " << outputPath;
     }
 }
 

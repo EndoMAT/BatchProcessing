@@ -4,6 +4,7 @@
 #include "Tiff/TiffReader.h"
 #include <QDebug>
 
+// Work in progress
 HyperStackRunner::HyperStackRunner(const QString& outputFile,  int numberOfChannels,int numberOfVolumesPerChannel,
                                    int numberOfPagesPerVolume, uint32_t width, uint16_t height,zeroth::SampleFormat dType):
 
